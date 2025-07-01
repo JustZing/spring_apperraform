@@ -2,6 +2,24 @@
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+crash.log 
 
+# Terraform directories
 .terraform/
-.terraform/
+
+# Terraform plan files
+*.tfplan
+*.tfplan.json
+*.tfplan.binary
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash logs
+crash.log
+
+# Override files (optional)
+terraform.tfvars
+*.tfvars.json
+
