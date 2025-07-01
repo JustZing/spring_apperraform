@@ -4,7 +4,6 @@ terraform {
     key          = "infra.tfstate"
     region       = "us-east-1"
     profile      = "default"
-    use_lockfile = true
   }
 }
 
