@@ -1,0 +1,47 @@
+alertmanager:
+  alertmanagerSpec:
+    storage:
+      volumeClaimTemplate:
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 5Gi
+
+prometheus:
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 10Gi
+
+grafana:
+  enabled: true
+  persistence:
+    enabled: true
+    size: 5Gi
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
+        access: proxy
+        isDefault: true
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+      - name: 'default'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        updateIntervalSeconds: 10
+        options:
+          path: /var/lib/grafana/dashboards/default
+

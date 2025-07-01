@@ -35,5 +35,13 @@ output "secure_subnet_az2_id" {
 }
 
 output "internet_gateway" {
-  value = aws_internet_gateway.internet_gateway
+  value = aws_internet_gateway.internet_gateway.id
+} 
+
+output "public_subnet_ids" {
+  value = [
+    aws_subnet.public_subnet_az1.id,
+    aws_subnet.public_subnet_az2.id,
+  ]
 }
+
