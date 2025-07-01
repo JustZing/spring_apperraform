@@ -1,9 +1,10 @@
 terraform {
   backend "s3" {
-    bucket  = "github-terraform-bucket"
-    key     = "infra.tfstate"
-    region  = "ap-south-1"
-    profile = "default"
-    dynamodb_table = "vegeta-terraform-remote-state-table"
+    bucket       = "terraform-eks-bucket-01"
+    key          = "infra.tfstate"
+    region       = "us-east-1"
+    profile      = "default"
+    use_lockfile = true
   }
 }
+
