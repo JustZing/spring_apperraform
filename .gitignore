@@ -27,3 +27,9 @@ terraform.tfvars
 *.tfstate*
 *.backup
 *.tfplan*
+spring_apperraform-clean/
+*.tfplan
+*.tfplan.binary
+*.tfplan.json
+*.tfstate*
+.terraform/
