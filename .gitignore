@@ -23,3 +23,7 @@ crash.log
 terraform.tfvars
 *.tfvars.json
 
+.terraform/
+*.tfstate*
+*.backup
+*.tfplan*
